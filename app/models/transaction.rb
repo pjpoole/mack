@@ -1,5 +1,5 @@
 class Transaction < ActiveRecord::Base
-  monetize :balance_cents
+  monetize :amount_cents
 
   belongs_to :statement
   belongs_to :account
