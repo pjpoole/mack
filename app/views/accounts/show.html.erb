@@ -1,21 +1,27 @@
-<p><b>Account:</b> <%= @account.name %></p>
+<h2><b>Account:</b> <%= @account.name %></h2>
 
 <%= form_for @transaction, url: account_transactions_path(@account) do |f| %>
-  <%= f.date_field :date, value: Date.today.to_s %>
-  <%= f.text_field :description %>
-  <%= f.number_field :amount %>
-  <%= f.submit "Create" %>
-<% end %>
-
-<table>
+<table class="table">
   <thead>
     <tr>
-      <th>Date</th><th>Description</th><th>Amount</th>
+      <th>Date</th><th>Description</th><th>Amount</th><th></th>
     </tr>
   </thead>
   <tbody>
+    <tr>
+      <td><%= f.date_field :date, value: Date.today.to_s %></td>
+      <td><%= f.text_field :description %></td>
+      <td><%= f.number_field :amount %></td>
+      <td><%= f.submit "Create" %></td>
+    </tr>
   <% @account.transactions.each do |transaction| %>
-    <tr><td><%= transaction.date %></td><td><%= transaction.description %></td><td><%= transaction.amount %></td></tr>
+    <tr>
+      <td><%= transaction.date %></td>
+      <td><%= transaction.description %></td>
+      <td><%= transaction.amount %></td>
+      <td></td>
+    </tr>
   <% end %>
   </tbody>
 </table>
+<% end %>
