@@ -1,0 +1,4 @@
+<h2>Statements for account <%= @account.name %></h2>
+<table class='table'>
+  <%= render partial: 'table', locals: { statements: @account.statements } %>
+</table>

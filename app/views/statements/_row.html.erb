@@ -1,0 +1,6 @@
+<tr>
+  <td><%= link_to statement.id, statement %></td>
+  <td><%= statement.start_date.strftime("%Y-%m-%d") if statement.start_date %></td>
+  <td><%= statement.end_date.strftime("%Y-%m-%d") if statement.end_date %></td>
+  <td><%= statement.balance %> <%= statement.balance_currency %></td>
+</tr>
