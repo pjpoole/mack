@@ -1,5 +1,6 @@
-<h2>Statement for account <%= @statement.account.name %></h2>
-
+<h2>Statement for account <%= link_to @statement.account.name, @statement.account %></h2>
+<p>Start Date: <%= @statement.start_date %></p>
+<p>End Date: <%= @statement.end_date %></p>
 <table class='table'>
   <%= render partial: 'transactions/table', locals: { transactions: @statement.transactions } %>
 </table>
