@@ -3,4 +3,5 @@ class Transaction < ActiveRecord::Base
 
   belongs_to :statement
   belongs_to :account
+  has_many :splits, dependent: :destroy
 end
