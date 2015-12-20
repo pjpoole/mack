@@ -5,3 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+user = User.create(name: "Peter")
+
+%w(Checking Savings Credit Cash).each do |type|
+  user.accounts.create(name: type)
+end
